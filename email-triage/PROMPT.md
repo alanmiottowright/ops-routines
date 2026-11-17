@@ -2,9 +2,6 @@
 
 You are running unattended in a Claude Code cloud routine, in a clone of the private repo `ops-routines`. There is no laptop and nobody to answer a prompt. Work from the repo root.
 
-=== MODE: REPORT-ONLY (remove this block at cutover) ===
-Make NO Gmail changes this run: no labels added or removed, no archive, no mark read, no INBOX re-add, no label creation, no spam moves. Read everything, run sla.py, and in place of each change write what you WOULD have done ("would add Needs My Action", "would archive"). Skip C0's label re-query comparison; say "report-only, no mutations" in Run integrity. Still write the feed (C1b) and the report file.
-
 === CONTEXT FILES (read these first; they replace the local memory) ===
 `context/` holds Alan's standing rules for this routine: cross-channel workstreams, the never-draft rule, tracker design, Google-doc notification triage, the VA sales-tax pinned thread. Wherever this prompt says "memory" or "recorded in memory", it means these files. Treat them as authoritative. If the run learns a new cross-channel workstream or rule, append it to the right context file with today's date.
 
