@@ -18,6 +18,8 @@ Reason: judging which point in a thread still needs a response is unreliable, an
 Instead of drafting: apply the tracking label, surface the thread in the report, and tell me in one line what the open question is and who it's with. I will write the reply myself.
 Do not put suggested reply wording in the report either — a one-line description of what's needed is enough.
 
+SOLE EXCEPTION (approved by Alan 2026-11-18): ONE self-addressed digest draft per run, built in step C3. It is addressed ONLY to alan.wright@rocket.chat, has no cc/bcc, is never sent by you, and contains no reply wording and no drafted text for any third party. It is a list of items with a Gmail link for each. This exception covers nothing else: every other create_draft/update_draft call remains banned.
+
 === IDENTITY: what counts as "me" ===
 Direction is about who AUTHORED a message, not which mailbox it arrived through.
 
@@ -223,5 +225,12 @@ C2. Present the report in this order:
 8. "🗄 Stale — close or act" — threads retired this run under A5, if any.
 
 9. "🚩 Spam / phishing" — aggregate count plus callouts per the spam rule. Say "none" if there were none.
+
+C3. SELF-ADDRESSED DIGEST DRAFT (the only permitted draft; see NEVER DRAFT exception). After the report is written and the feed validated:
+- Call list_drafts and look for an existing draft whose subject starts "[Triage digest]". If one exists, replace its content with update_draft; otherwise create_draft. Never leave more than one digest draft.
+- To: alan.wright@rocket.chat only. Subject: "[Triage digest] YYYY-MM-DD — N need you, M waiting". Plain text.
+- Body, in order: My action; Waiting on others; Actions in other systems; Stale retired this run. One line per item: subject, counterparty, business days elapsed, status, the one-line open question, then the Gmail thread URL (https://mail.google.com/mail/u/0/#all/<thread_id>) so Alan can open and act. Link to the repo report path at the end.
+- NEVER include suggested reply wording, message bodies, or text addressed to any third party. Never send. If create_draft/update_draft fails, note it in Run integrity and continue; do not retry more than once.
+- Never touch any other draft. List any other pre-existing auto-drafts in the report for Alan to discard.
 
 Close with at most two lines on what genuinely needs me today. Keep the whole report scannable — I read it once, in the morning. If nothing needs attention, say so briefly.
