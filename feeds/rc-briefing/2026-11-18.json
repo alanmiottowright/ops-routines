@@ -1,0 +1,127 @@
+{
+  "id": "2026-11-18",
+  "kind": "daily",
+  "generated_at": "2026-11-18T21:30:00Z",
+  "label": "Wed 18 Nov",
+  "tab": "18 Nov",
+  "window_text": "Unread as of 4:00 pm ET",
+  "counts": {
+    "needs": 0,
+    "read": 5,
+    "rooms_triaged": 15,
+    "marked_read": 15,
+    "held": 0
+  },
+  "needs": [],
+  "read": [
+    {
+      "room": "CCT 2026/2027 (people-finance)",
+      "rid": "6afe03f07ded13a6af5f6302",
+      "who": "Fernanda Bernardes",
+      "summary": "Brazil collective labour agreement 2026/2027: employer union suggests provisioning 4.49% (12-month INPC) from 1 Nov while the deal is pending; no action needed, shared for planning.",
+      "why": "Payroll cost provision for Brazil.",
+      "link": "https://open.rocket.chat/group/deX8m6rwumCPAeFhG?msg=mWWgG8FgyWMiaMjD7",
+      "important": true
+    },
+    {
+      "room": "rocketchat-people-finance",
+      "rid": "mNRjh6oNfPCNRfPxX",
+      "who": "Fernanda Bernardes",
+      "summary": "A contractor PIX payment was made 17 Nov after accounting issued the RPA; Fernanda is also chasing the team for a date on figures she is waiting for.",
+      "why": "Brazil payables and an open finance follow-up.",
+      "link": "https://open.rocket.chat/group/rocketchat-people-finance?msg=YNgpneTb4LukY6QBv",
+      "important": true
+    },
+    {
+      "room": "rocketchat-sales-ops",
+      "rid": "Tnz6huWGGDhwqPA3N",
+      "who": "Amanda Oliveira",
+      "summary": "Vivo/Anhalt renewal (115 seats at $2): no evidence the contract must end Apr-27, so the workspace can be extended to end-Dec; $2/seat looks too low and needs Weiblen/Scott; Anhalt's hosting for other companies set aside as new business. You were tagged FYI.",
+      "why": "Pricing exception and partner terms.",
+      "link": "https://open.rocket.chat/group/rocketchat-sales-ops?msg=pW7WhJn3AxNb9ueNX",
+      "important": false
+    },
+    {
+      "room": "rocketchat-aging-accounts-receivable",
+      "rid": "QMsumw2sv66h2tdZH",
+      "who": "Marcela Lima",
+      "summary": "Slotegrator/Velund pre-QBS balance confirmed at €21,387.88 + $385; Marcela will introduce Samuel to the customer by email.",
+      "why": "AR collection moving forward.",
+      "link": "https://open.rocket.chat/group/rocketchat-aging-accounts-receivable?msg=LPgJYyMPFZtTmGTu9",
+      "important": false
+    },
+    {
+      "room": "Gabriel Engel (DM)",
+      "rid": "4SFNEydqQhHtj5KkPELdRTp6F4MGdGx9zj",
+      "who": "Gabriel Engel",
+      "summary": "Gabriel replied OK to your proposal to move the Zoho CRM Super Admin role from him to you.",
+      "why": "Decision confirmed.",
+      "link": "https://open.rocket.chat/direct/4SFNEydqQhHtj5KkPELdRTp6F4MGdGx9zj?msg=8zWHhYExZyBNTsi7Q",
+      "important": false
+    }
+  ],
+  "skim": [
+    {
+      "room": "rocketchat-sales-ops",
+      "gist": "Many deal threads: CCNET/Vivo transactional vs strategic, Telecable awaiting customer AP process, Maximus workspace export request.",
+      "link": "https://open.rocket.chat/group/rocketchat-sales-ops?msg=CmWfijPodmYcZiSmm"
+    },
+    {
+      "room": "competitors",
+      "gist": "Bruno on Pexip: agnostic positioning confirmed, some Pexip teams still prefer us, UK team pitches both; more at next week's QBR. Gabriel agreed.",
+      "link": "https://open.rocket.chat/group/competitors?msg=juzSn5dvDnFZcE5eb"
+    },
+    {
+      "room": "rocketchat-dev",
+      "gist": "9.0 download link serves a 9.1.0-develop version string; local develop reload issue.",
+      "link": "https://open.rocket.chat/channel/rocketchat-dev?msg=YyNQLBSnBECmWCGDk"
+    },
+    {
+      "room": "Omnichannel Preferred Partner",
+      "gist": "SERPRO emails forwarded to MakeOne; support route to Serpro confirmed next week.",
+      "link": "https://open.rocket.chat/group/nWdEqaDKEEebJhm34?msg=km8SaxpWvoCiLHrgN"
+    },
+    {
+      "room": "rocketchat-security",
+      "gist": "One link to an X post, no discussion.",
+      "link": "https://open.rocket.chat/group/rocketchat-security?msg=BQn3baAQCjBWM879t"
+    },
+    {
+      "room": "RevOps Pipeline Reports - EMEA-APAC",
+      "gist": "Weekly regional report posted.",
+      "link": "https://open.rocket.chat/group/RevOps-Pipeline-Reports-EMEA-APAC?msg=GBk7XbRhSgw5CGXwW"
+    }
+  ],
+  "quiet": [
+    {
+      "room": "sales-hand-raises",
+      "count": 3
+    },
+    {
+      "room": "rocketchat-sales-alerts",
+      "count": 2
+    },
+    {
+      "room": "RevOps Pipeline Reports - NORAM",
+      "count": 2
+    },
+    {
+      "room": "rocketchat-won-deals",
+      "count": 1
+    },
+    {
+      "room": "sales-product-tour-requests",
+      "count": 1
+    }
+  ],
+  "quiet_note": "Nothing triggered.",
+  "watchlist": [
+    "Brazil CCT 2026/2027 4.49% provision",
+    "AeC contract restructure approved"
+  ],
+  "integrity": "15 unread → 15 marked read, 0 held; the re-check matched. The AeC approval you were asked for is already answered by you. No failures.",
+  "dm": {
+    "rid": "W5YZAb7jeTroNAFvf",
+    "parent_id": "FRtPH5KrcEg9TMTbS"
+  }
+}
