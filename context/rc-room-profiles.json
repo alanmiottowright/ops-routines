@@ -1,0 +1,331 @@
+{
+ "_note": "Tier per room, set by Alan on the RC Room Designation page (https://claude.ai/artifact/7Ceo7oZPzDw2rRqAryZXGj). always = every post surfaced; read = surfaced when material; skim = one line per room; quiet = counts unless a trigger fires. DMs use the DM rule. Rooms not listed default to skim (quiet if mostly bots).",
+ "status": "proposed defaults - awaiting Alan's designation",
+ "cap_read": 20,
+ "rooms": {
+  "3rjyfdASbbaZmuby8": {
+   "name": "rocketchat-q-and-a",
+   "tier": "skim"
+  },
+  "4wxRsBTQLPkDdsgGr": {
+   "name": "Rocket.Chat - Business Systems & Data Analytics",
+   "tier": "skim"
+  },
+  "5CpxD4SMqePFQtwQX": {
+   "name": "rocketchat-website",
+   "tier": "quiet"
+  },
+  "64eca8e098d719394320bdd4": {
+   "name": "Rocket.Chat - Trademarks",
+   "tier": "always"
+  },
+  "650dc79765de7f7135ac884c": {
+   "name": "US-employees",
+   "tier": "skim"
+  },
+  "651fc6551da6e3f3bface3ec": {
+   "name": "Pipeline Review (Weekly)",
+   "tier": "always"
+  },
+  "65ef03d3fcbaf1cabf8543e1": {
+   "name": "Rocket.Chat - CLT - [CEO Leadership Team] Corporate Management",
+   "tier": "always"
+  },
+  "661db22537ae86b111973d55": {
+   "name": "rocketchat-pipeline-generation",
+   "tier": "skim"
+  },
+  "66ad00417cdfe7d171508a2d": {
+   "name": "Smart4Aviation Order Form",
+   "tier": "read"
+  },
+  "66e82cb06e5d28b96f1176cf": {
+   "name": "[Ops Team] Sprint Planning & Review",
+   "tier": "skim"
+  },
+  "6733675b1adb062ceacc927f": {
+   "name": "EMEA Partnerships & Sales/CSM",
+   "tier": "skim"
+  },
+  "67bddc494d9459a2b5a9d7e4": {
+   "name": "Discontinue Standard Cloud",
+   "tier": "read"
+  },
+  "67db18b95347f12338c8a6a8": {
+   "name": "AeC opportunity",
+   "tier": "always"
+  },
+  "67dd637a566b16662d5e00c0": {
+   "name": "LAC l Sales",
+   "tier": "skim"
+  },
+  "68345a5d5dc8d3f1665b0cc6": {
+   "name": "confluence-publishers",
+   "tier": "quiet"
+  },
+  "687f80c7924caae17c452e53": {
+   "name": "Rocket.Chat - All Ops Leadership",
+   "tier": "always"
+  },
+  "6887a489e73e80b2e999266f": {
+   "name": "amplify-linkedIn",
+   "tier": "quiet"
+  },
+  "689513e87da605689d4a6477": {
+   "name": "AWS Partnership Initiatives",
+   "tier": "skim"
+  },
+  "68c41d58c96a47b4a0922c75": {
+   "name": "[Finance] [Internal] Operations",
+   "tier": "always"
+  },
+  "690cdfc2d9749ce77c456fef": {
+   "name": "[Employee Devices] Approvals ",
+   "tier": "quiet"
+  },
+  "695bb860a654cc416e3cca43": {
+   "name": "rocketchat-legal-finance",
+   "tier": "always"
+  },
+  "695d8a991d0df7f75b7f18d9": {
+   "name": "Strategic-Initiatives",
+   "tier": "always"
+  },
+  "695fb5c7fbc5a5f7f3559812": {
+   "name": "[External] Nova Gestao <> Rocket.Chat: Leadership ",
+   "tier": "always"
+  },
+  "696133773bd459bbdc4ca3fc": {
+   "name": "[External] Nova Gestao <> Rocket.Chat: Full Team ",
+   "tier": "read"
+  },
+  "69823f3958b2fb58ad5d39f8": {
+   "name": "Leadership Review: FY26 Business Plan and Prep for Board",
+   "tier": "always"
+  },
+  "6998a0f79e216a919ff7278c": {
+   "name": "Pricing Steering Room",
+   "tier": "always"
+  },
+  "69a6da25cfc43233cae913ec": {
+   "name": "rocketchat-leaders",
+   "tier": "always"
+  },
+  "69ab34eb7e8912581684b224": {
+   "name": "Pricing Initiative",
+   "tier": "read"
+  },
+  "69b96808bcc93d40547fe63c": {
+   "name": "Out of Band Comms SKU",
+   "tier": "skim"
+  },
+  "69baf9a244b7594fa2b12bff": {
+   "name": "Pricing_Initiative_OpsTeam",
+   "tier": "read"
+  },
+  "69c694407fef750c23496dd5": {
+   "name": "Stock Option Plan",
+   "tier": "always"
+  },
+  "69eba23be604781c51e3a357": {
+   "name": "RevOps Alignment (Achy, Alan, Amanda)",
+   "tier": "always"
+  },
+  "69f0d00bf3060f7b1f498a6f": {
+   "name": "PMO/GRC Budget & Costs",
+   "tier": "always"
+  },
+  "6a5e7ef9b489520402ebc0e3": {
+   "name": "Omnichannel Preferred Partner",
+   "tier": "skim"
+  },
+  "6a67bb38afb371486f901b3d": {
+   "name": "[RevOps] Pipeline Reports - NORAM",
+   "tier": "quiet"
+  },
+  "6a67bbc7afb371486f901b82": {
+   "name": "[RevOps] Pipeline Reports - EMEA-APAC",
+   "tier": "skim"
+  },
+  "6a75f6053a9968738043fc2c": {
+   "name": "[Sales] Quoting Calculator Project",
+   "tier": "skim"
+  },
+  "6aa174983b679fe065f8259c": {
+   "name": "Transactional Renewals - Partners",
+   "tier": "read"
+  },
+  "6ae4ee4356f27878bebecba7": {
+   "name": "AI Labs Structure",
+   "tier": "always"
+  },
+  "6aeb4ba2984a70e609bbf15c": {
+   "name": "rocketchat-finance-creditcard-comms",
+   "tier": "read"
+  },
+  "6aebd409cda5b046bac63dfc": {
+   "name": "AI In Practice G&A",
+   "tier": "skim"
+  },
+  "6af3723f6c835410f69355d2": {
+   "name": "sales-product-tour-requests",
+   "tier": "quiet"
+  },
+  "6af5b8d1fdddd0020076b321": {
+   "name": "Partner Portal",
+   "tier": "skim"
+  },
+  "6afaf4b11574ed94833be36f": {
+   "name": "M365 Outage Pipeline Campaign",
+   "tier": "skim"
+  },
+  "6afc4c83401d042a3d451b59": {
+   "name": "CRM Healthcheck",
+   "tier": "skim"
+  },
+  "6afc7ad2401d042a3d4537a9": {
+   "name": "[Hubspot] Contract Renewal 2027",
+   "tier": "read"
+  },
+  "6afc8412519c71f1cfe981c3": {
+   "name": "[Apollo] Contract Renewal 2027",
+   "tier": "read"
+  },
+  "7DAyBETrQ4puvXgjC": {
+   "name": "MMM",
+   "tier": "skim"
+  },
+  "7ch7iviRBi6iJpcZT": {
+   "name": "LENS Compliance - Risk Management",
+   "tier": "read"
+  },
+  "7qoHLKG5f8uXpGLqu": {
+   "name": "Offboarding",
+   "tier": "quiet"
+  },
+  "AALrfqnPPNykhvhWo": {
+   "name": "rocketchat-design",
+   "tier": "quiet"
+  },
+  "B5dZdiXo7MDtXpmDp": {
+   "name": "rocketchat-marketing",
+   "tier": "skim"
+  },
+  "Bj8JYmvWukG6SRAQE": {
+   "name": "rocketchat-revops-and-finance-invoicing",
+   "tier": "read"
+  },
+  "CPFykdqLdRhNQGsWG": {
+   "name": "rocketchat-sales-alerts",
+   "tier": "quiet"
+  },
+  "CuB7nN348gvro5qtM": {
+   "name": "cloud-sre-support",
+   "tier": "quiet"
+  },
+  "EHcemnckAFFisuS8K": {
+   "name": "Customer Support Backroom",
+   "tier": "quiet"
+  },
+  "EiSvtrMm6zQ3gFqxC": {
+   "name": "Marketing&Operations",
+   "tier": "skim"
+  },
+  "Exj96RxdznB8S59Ne": {
+   "name": "open-performance-issues",
+   "tier": "quiet"
+  },
+  "FATCnDk5egNtRvQfv": {
+   "name": "rocketchat-dev",
+   "tier": "skim"
+  },
+  "HbC9pGqbRAZwGqnS8": {
+   "name": "CSM&CX-Operations",
+   "tier": "skim"
+  },
+  "KG3ZvsTj4yFqFyWxk": {
+   "name": "rocketchat-legal-compliance",
+   "tier": "always"
+  },
+  "NRwb64eSfHRmwfA2K": {
+   "name": "rocketchat-thanks",
+   "tier": "quiet"
+  },
+  "QG6WKaB3YZKzv2ykN": {
+   "name": "important",
+   "tier": "always"
+  },
+  "QMsumw2sv66h2tdZH": {
+   "name": "rocketchat-aging-accounts-receivable",
+   "tier": "read"
+  },
+  "RcPHkZQxG9AESLutL": {
+   "name": "sales-hand-raises",
+   "tier": "quiet"
+  },
+  "Tnz6huWGGDhwqPA3N": {
+   "name": "rocketchat-sales-ops",
+   "tier": "read"
+  },
+  "YFGDi4YmQEda4FkPC": {
+   "name": "rocketchat-security",
+   "tier": "read"
+  },
+  "aSzxwWNe9cNAsTHZR": {
+   "name": "rocketchat-won-deals",
+   "tier": "quiet"
+  },
+  "apJPk3Xv77rqB3DfT": {
+   "name": "rocketchat-sales",
+   "tier": "skim"
+  },
+  "bEfNsQpS7Ne5Bep4J": {
+   "name": "Rocket.Chat - RevOps & Biz Sys",
+   "tier": "read"
+  },
+  "dHnLLPxmZEKSsEgEK": {
+   "name": "Rocket.Chat - Data + Analytics",
+   "tier": "skim"
+  },
+  "eLto6AbeLmMAr2Yq6": {
+   "name": "support-backroom",
+   "tier": "quiet"
+  },
+  "jdGzocjDjHzZtoNSa": {
+   "name": "rocketchat-ai-club",
+   "tier": "skim"
+  },
+  "k46YezYaE9jmvi7uM": {
+   "name": "random",
+   "tier": "quiet"
+  },
+  "mNRjh6oNfPCNRfPxX": {
+   "name": "rocketchat-people-finance",
+   "tier": "always"
+  },
+  "oP8y6eDKk494q7gT7": {
+   "name": "hosting-quotes",
+   "tier": "quiet"
+  },
+  "pCYPYJj9ndvuAGuTb": {
+   "name": "good-vibes",
+   "tier": "quiet"
+  },
+  "pCw5tr5MHB4qnpQXq": {
+   "name": "personnel-updates",
+   "tier": "quiet"
+  },
+  "t5aBMFFDHdCdfCbDK": {
+   "name": "NORAM Marketing",
+   "tier": "skim"
+  },
+  "vjmkPMtfA7XWvXDNS": {
+   "name": "EMEA Sales Team",
+   "tier": "skim"
+  },
+  "yE362d5rxWeo5XpCd": {
+   "name": "Rocket.Chat Core Team",
+   "tier": "quiet"
+  }
+ }
+}

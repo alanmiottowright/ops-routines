@@ -1,0 +1,240 @@
+<title>RC Briefing Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column; mockups sit in framed "device" panels that echo the Rocket.Chat client */
+:root{
+  --bg:#f5f6f8; --fg:#1f2329; --mut:#5f6673; --line:#dde1e7; --card:#ffffff;
+  --rc:#f5455c; --rc-soft:#fde8eb; --link:#1d74f5;
+  --act:#d4283f; --read:#1d74f5; --skim:#6b7280; --quiet:#9aa1ac;
+  --rc-side:#2f343d; --rc-side-fg:#cbced1; --rc-pane:#ffffff; --rc-thread:#f7f8fa;
+  --ff-body:"Inter",system-ui,-apple-system,sans-serif; --ff-head:"Space Grotesk","Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14171c; --fg:#e7e9ee; --mut:#9aa2b1; --line:#2a3039; --card:#1b1f26;
+  --rc:#ff6176; --rc-soft:#3a1d23; --link:#6aa6ff;
+  --act:#ff6b7f; --read:#6aa6ff; --skim:#a0a7b4; --quiet:#6f7785;
+  --rc-side:#0f1216; --rc-side-fg:#a9aeb6; --rc-pane:#1b1f26; --rc-thread:#20252d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171c; --fg:#e7e9ee; --mut:#9aa2b1; --line:#2a3039; --card:#1b1f26;
+  --rc:#ff6176; --rc-soft:#3a1d23; --link:#6aa6ff;
+  --act:#ff6b7f; --read:#6aa6ff; --skim:#a0a7b4; --quiet:#6f7785;
+  --rc-side:#0f1216; --rc-side-fg:#a9aeb6; --rc-pane:#1b1f26; --rc-thread:#20252d; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--ff-body);padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+h1,h2,h3{font-family:var(--ff-head);text-wrap:balance;margin:0}
+h1{font-size:30px;line-height:1.15}
+h2{font-size:20px}
+h3{font-size:15px}
+p{margin:0;max-width:68ch}
+a{color:var(--link)}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.lede{display:flex;flex-direction:column;gap:10px}
+.status{display:inline-flex;align-self:flex-start;gap:6px;align-items:center;background:var(--rc-soft);color:var(--rc);font-weight:600;font-size:13px;border-radius:999px;padding:3px 10px}
+section{display:flex;flex-direction:column;gap:14px}
+ul.plain{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:72ch}
+.note{font-size:13px;color:var(--mut)}
+
+/* tiers */
+.tiers{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.pill{display:inline-block;font-size:12px;font-weight:600;border-radius:4px;padding:1px 7px;white-space:nowrap;border:1px solid currentColor}
+.p-act{color:var(--act)} .p-read{color:var(--read)} .p-skim{color:var(--skim)} .p-quiet{color:var(--quiet)}
+
+/* RC client mock */
+.device{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--rc-pane);display:grid;grid-template-columns:170px minmax(0,1fr) minmax(0,1.25fr)}
+.side{background:var(--rc-side);color:var(--rc-side-fg);padding:14px 10px;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.side b{color:#fff;font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.7;margin:4px 6px}
+.side div{padding:5px 8px;border-radius:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.side .on{background:rgba(255,255,255,.12);color:#fff}
+.pane{padding:14px;display:flex;flex-direction:column;gap:12px;border-right:1px solid var(--line);min-width:0}
+.thread{background:var(--rc-thread);padding:14px;display:flex;flex-direction:column;gap:14px;min-width:0;max-height:640px;overflow:auto}
+.roomhead{font-weight:600;font-size:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.msg{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.5}
+.av{width:32px;height:32px;border-radius:6px;background:var(--rc);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}
+.who{font-weight:600}.who small{font-weight:400;color:var(--mut);margin-left:6px}
+.msg .body{min-width:0;overflow-wrap:anywhere;display:flex;flex-direction:column;gap:4px}
+.tr{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--link);font-weight:600}
+.tr span{background:var(--link);color:#fff;border-radius:999px;padding:0 7px}
+.rule{color:var(--mut);letter-spacing:-1px}
+.blt{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:3px}
+.dim{color:var(--mut)}
+.thead{font-weight:600;font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+
+/* briefing page mock */
+.page{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:18px;display:flex;flex-direction:column;gap:14px}
+.pagebar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--mut)}
+.tab.on{border-color:var(--fg);color:var(--fg);font-weight:600}
+.counts{display:flex;gap:18px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.counts div{display:flex;flex-direction:column}
+.counts b{font-family:var(--ff-head);font-size:22px}
+.counts small{color:var(--mut);font-size:12px}
+.item{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.item input{margin-top:3px}
+.item em{font-style:normal;color:var(--mut);font-size:13px;display:block}
+.btn{font-size:12px;font-weight:600;border:1px solid var(--line);border-radius:6px;padding:3px 9px;white-space:nowrap;text-decoration:none;color:var(--fg)}
+.grp{display:flex;flex-direction:column}
+.grp h3{display:flex;gap:8px;align-items:center;margin-bottom:2px}
+
+.decide{display:flex;flex-direction:column;gap:10px}
+.dq{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.dq b{font-family:var(--ff-head)}
+.steps{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;max-width:72ch}
+
+@media (max-width:760px){
+  .device{grid-template-columns:minmax(0,1fr)}
+  .side{display:none}
+  .pane{border-right:0;border-bottom:1px solid var(--line)}
+  .thread{max-height:none}
+}
+</style>
+
+<main>
+  <header class="lede">
+    <span class="eyebrow">Rocket.Chat triage · redesign</span>
+    <h1>RC Briefing: plan and mockup</h1>
+    <p>The 4 pm triage stops being a silent cleanup and becomes a briefing. It posts one Rocket.Chat thread to you each weekday, modelled on the Ops Team sprint thread, and publishes the same briefing as a page in Claude. It sorts everything into four tiers, so things you should read still reach you even when nobody asked you anything.</p>
+    <span class="status">Waiting for your approval</span>
+  </header>
+
+  <section>
+    <h2>What changes</h2>
+    <ul class="plain">
+      <li><b>One briefing thread per run.</b> The parent message is a bold headline with the counts. The thread replies hold one section per tier, with a direct link to every message that matters.</li>
+      <li><b>Four tiers instead of two.</b> Today a room is either held or marked read, and anything marked read disappears. The new middle tiers, "Worth reading" and "Skim", keep useful FYI in front of you.</li>
+      <li><b>Room profiles you can edit.</b> A new file, <code>context/rc-room-profiles.md</code>, gives each busy room a default tier and the events that should lift it. For example, <code>sales-alerts</code> stays quiet unless a deal is $350K or more.</li>
+      <li><b>A briefing page in Claude</b> at a fixed private link. It shows the same content with done-checkboxes and the last 14 briefings.</li>
+      <li><b>One new write is allowed.</b> The routine may post to your briefing DM and nowhere else. Every other room stays read-only, apart from marking rooms read.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The four tiers</h2>
+    <div class="tiers">
+      <table>
+        <thead><tr><th>Tier</th><th>What goes in</th><th>Read state in RC</th><th>In the briefing</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pill p-act">Needs you</span></td><td>An <code>@alan.wright</code> ask or a DM that wants a reply, decision, approval or review, and nobody has answered it yet.</td><td>Left unread</td><td>Each item linked, with who's asking, what for, and how many days it has waited.</td></tr>
+          <tr><td><span class="pill p-read">Worth reading</span></td><td>No ask, but a COO/CFO should know it: decisions taken, forecast/pipeline/cash/AR figures, escalations, security or legal exposure, pricing or contract exceptions, people changes, partner news. <b>Every post in #important always lands here, whether or not it mentions you, and doesn't count toward the cap.</b> Apart from #important, at most 20 per run, most important first.</td><td>Marked read</td><td>Each item linked, with one line on why it matters.</td></tr>
+          <tr><td><span class="pill p-skim">Skim</span></td><td>Normal team traffic that's useful to glance at: announcements, wins, status posts.</td><td>Marked read</td><td>One line per room summarising what happened, with a link to the room.</td></tr>
+          <tr><td><span class="pill p-quiet">On call / noise</span></td><td>Bot feeds, alerts and chatter you only open when something happens: sales-alerts, dev, SRE support, random, thanks.</td><td>Marked read</td><td>Message counts only. A matching trigger lifts the message into a higher tier.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mockup 1: the DM thread in Rocket.Chat</h2>
+    <p class="note">This is a mockup. The AeC and PHP2Shell items come from today's real run; the other items are illustrative.</p>
+    <div class="device" role="img" aria-label="Mockup of the briefing thread in the Rocket.Chat client">
+      <div class="side">
+        <b>Direct messages</b>
+        <div class="on">alan.wright (you)</div>
+        <div>amanda.oliveira</div>
+        <div>bruno.weiblen</div>
+        <b>Groups</b>
+        <div>[Ops Team] Sprint Planning</div>
+        <div>RevOps &amp; Biz Sys</div>
+        <div>rocketchat-sales-ops</div>
+      </div>
+      <div class="pane">
+        <div class="roomhead">alan.wright</div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div class="who">alan.wright <small>4:02 PM</small></div>
+          <div><b>[RC Briefing] Wed 18 Nov | 1 needs you · 4 worth reading</b></div>
+          <div class="dim">11 unread rooms triaged · 1 watchlist addition · <a href="#">Open the briefing page ↗</a></div>
+          <div class="tr"><span>5</span> replies · just now</div>
+        </div></div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div class="who">alan.wright <small>Tue 4:01 PM</small></div>
+          <div><b>[RC Briefing] Tue 17 Nov | 0 need you · 2 worth reading</b></div>
+          <div class="dim">14 unread rooms triaged · <a href="#">Open the briefing page ↗</a></div>
+          <div class="tr"><span>4</span> replies</div>
+        </div></div>
+      </div>
+      <div class="thread">
+        <div class="thead">Thread</div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div><b>Needs you (1)</b></div><div class="rule">_______</div>
+          <ul class="blt"><li><a href="#">AeC opportunity</a>: Marcela Lima asks you to approve the AeC restructure, keeping $226,771 over 3 years instead of 1.5 (ACV $151,181, TCV $453,544) · 0 days</li></ul>
+        </div></div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div><b>Worth reading (4)</b></div><div class="rule">_______</div>
+          <ul class="blt">
+            <li><a href="#">important</a>: <span class="dim">(example)</span> holiday schedule for 26–27 Nov posted. Why it matters: #important is always surfaced.</li>
+            <li><a href="#">rocketchat-sales-ops</a>: Julio gave AmeriSave a written "not affected" position on PHP2Shell. Why it matters: it closes the open customer-assurance item.</li>
+            <li><a href="#">RevOps &amp; Biz Sys</a>: <span class="dim">(example)</span> The forecast call moved EMEA Q4 commit down $120K. Why it matters: the board bridge.</li>
+            <li><a href="#">rocketchat-aging-accounts-receivable</a>: <span class="dim">(example)</span> A customer passed 90 days on $48K. Why it matters: a cash-collection risk.</li>
+          </ul>
+        </div></div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div><b>Skim</b></div><div class="rule">_______</div>
+          <ul class="blt">
+            <li><a href="#">rocketchat-won-deals</a>: <span class="dim">(example)</span> 2 wins, $64K ACV in total</li>
+            <li><a href="#">rocketchat-dev</a>: release 7.12 RC cut, 3 messages</li>
+          </ul>
+        </div></div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div><b>On call / noise</b></div><div class="rule">_______</div>
+          <div class="dim">sales-alerts 30 (lead conversions, no deal ≥ $350K) · cloud-sre-support 0 · thanks 1 · random 2. Nothing triggered.</div>
+        </div></div>
+        <div class="msg"><div class="av">AW</div><div class="body">
+          <div><b>Watchlist and run check</b></div><div class="rule">_______</div>
+          <div>Watchlist: added 1 fact (PHP2Shell customer assurance).</div>
+          <div class="dim">Run check: 11 unread → 10 marked read, 1 held. The re-check matched. No failures.</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mockup 2: the briefing page in Claude</h2>
+    <div class="page" role="img" aria-label="Mockup of the briefing page">
+      <div class="pagebar">
+        <h3>RC Briefing · Wed 18 Nov</h3>
+        <div class="tabs"><span class="tab on">18 Nov</span><span class="tab">17 Nov</span><span class="tab">16 Nov</span><span class="tab">Backfill 9–18 Nov</span></div>
+      </div>
+      <div class="counts">
+        <div><b>1</b><small>needs you</small></div>
+        <div><b>4</b><small>worth reading</small></div>
+        <div><b>2</b><small>rooms to skim</small></div>
+        <div><b>33</b><small>filtered messages</small></div>
+      </div>
+      <div class="grp">
+        <h3><span class="pill p-act">Needs you</span></h3>
+        <div class="item"><input type="checkbox" aria-label="Done"><div><b>AeC opportunity</b> · Marcela Lima<em>Approve the AeC restructure: keep $226,771 over 3 years instead of 1.5 · 0 days</em></div><a class="btn" href="#">Open in RC</a></div>
+      </div>
+      <div class="grp">
+        <h3><span class="pill p-read">Worth reading</span></h3>
+        <div class="item"><input type="checkbox" aria-label="Done"><div><b>rocketchat-sales-ops</b> · Julio Araujo<em>AmeriSave got a written "not affected" position on PHP2Shell. It closes the customer-assurance item.</em></div><a class="btn" href="#">Open in RC</a></div>
+        <div class="item"><input type="checkbox" aria-label="Done"><div><b>RevOps &amp; Biz Sys</b> · example<em>The forecast call moved EMEA Q4 commit down $120K.</em></div><a class="btn" href="#">Open in RC</a></div>
+      </div>
+      <p class="note">The checkboxes are saved in your browser only. Each "Open in RC" button goes straight to the message on open.rocket.chat.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Backfill test, 9–18 Nov</h2>
+    <ol class="steps">
+      <li><b>One run of the new triage over every room with traffic since Mon 9 Nov, 00:00 ET.</b> That's 99 rooms: 63 private groups, 18 channels and 18 DMs. It reads the full message history for the period, not just what's unread.</li>
+      <li><b>It changes nothing in Rocket.Chat except posting the briefing.</b> It doesn't mark rooms read or unread, so last week's state stays as you left it. The regular 4 pm run carries on as normal afterwards.</li>
+      <li><b>It adds a "Possibly missed" section.</b> This lists every <code>@alan.wright</code> ask or DM in the window that got no reply from you and nobody else picked up, including rooms the old triage had already marked read. This is the "nothing key was missed" check.</li>
+      <li><b>It posts one briefing</b>, <code>[RC Briefing] Backfill 9–18 Nov</code>, to the DM and as its own tab on the page. You review it, and we adjust the room profiles before the daily runs rely on them.</li>
+    </ol>
+    <p class="note">It runs as a one-off cloud run on Sonnet. 99 rooms is a long read, so expect it to take 20–40 minutes.</p>
+  </section>
+
+  <section>
+    <h2>Decisions for you</h2>
+    <div class="decide">
+      <div class="dq"><b>1. Who sends the briefing</b><p><b>Recommended:</b> a DM to yourself, posted with your existing cloud-triage token. It works today, but Rocket.Chat doesn't notify you about your own messages, so the routine also sends a phone push through Claude with the page link. <b>Alternative:</b> a bot account such as <code>ops.briefing</code> that DMs you and shows as unread. That needs a workspace admin to create the bot and its token. You can switch to the bot later without redesigning anything.</p></div>
+      <div class="dq"><b>2. Cap on "Worth reading": set to 20</b><p>At most 20 per run, ranked by importance, with any overflow listed under Skim. #important posts don't count toward it. We'll refine the number over time.</p></div>
+      <div class="dq"><b>3. Run time: keep 4 pm ET</b><p>It stays at 4 pm ET on weekdays (21:00 UTC) while we see how it goes. Adding a morning run later just means a second schedule time. The routine already handles whatever is unread since the last run, so nothing else changes.</p></div>
+    </div>
+  </section>
+</main>

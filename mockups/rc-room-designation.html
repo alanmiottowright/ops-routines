@@ -1,0 +1,174 @@
+<title>RC Room Designation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one working column; a sticky tally bar, then one compact row per room with a 4-way tier switch */
+:root{
+  --bg:#f5f6f8; --fg:#1f2329; --mut:#5f6673; --line:#dde1e7; --card:#ffffff; --hover:#eef0f4;
+  --always:#d4283f; --read:#1d74f5; --skim:#5b6472; --quiet:#8a919c; --ok:#15803d;
+  --ff-body:"Inter",system-ui,-apple-system,sans-serif; --ff-head:"Space Grotesk","Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14171c; --fg:#e7e9ee; --mut:#9aa2b1; --line:#2a3039; --card:#1b1f26; --hover:#232832;
+  --always:#ff6b7f; --read:#6aa6ff; --skim:#a0a7b4; --quiet:#737b88; --ok:#4ade80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171c; --fg:#e7e9ee; --mut:#9aa2b1; --line:#2a3039; --card:#1b1f26; --hover:#232832;
+  --always:#ff6b7f; --read:#6aa6ff; --skim:#a0a7b4; --quiet:#737b88; --ok:#4ade80; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 var(--ff-body);padding-block:24px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+main{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:var(--ff-head);margin:0;text-wrap:balance}
+h1{font-size:26px} h2{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--mut)}
+p{margin:0;max-width:70ch}
+.mut{color:var(--mut)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.tally{display:flex;gap:14px;flex-wrap:wrap;font-variant-numeric:tabular-nums;font-size:13px}
+.tally b{font-family:var(--ff-head);font-size:17px;margin-right:3px}
+.k-always{color:var(--always)} .k-read{color:var(--read)} .k-skim{color:var(--skim)} .k-quiet{color:var(--quiet)}
+.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;cursor:pointer}
+.primary{background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:6px 12px;font-weight:600}
+.primary:disabled{opacity:.5;cursor:default}
+.saved{font-size:12px;color:var(--mut)}
+.saved.ok{color:var(--ok)}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--mut);border-radius:999px;padding:2px 10px;font-size:12px}
+.chip[aria-pressed="true"]{border-color:var(--fg);color:var(--fg);font-weight:600}
+section{display:flex;flex-direction:column;gap:6px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.row:hover{background:var(--hover)}
+.name{min-width:0}
+.name b{display:block;overflow-wrap:anywhere}
+.name small{color:var(--mut);font-variant-numeric:tabular-nums}
+.changed{font-size:11px;font-weight:600;color:var(--read);margin-left:6px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
+.seg button{border:0;background:transparent;color:var(--mut);padding:5px 9px;font-size:12px;font-weight:500;border-left:1px solid var(--line);white-space:nowrap}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"].always{background:var(--always);color:#fff}
+.seg button[aria-pressed="true"].read{background:var(--read);color:#fff}
+.seg button[aria-pressed="true"].skim{background:var(--skim);color:#fff}
+.seg button[aria-pressed="true"].quiet{background:var(--quiet);color:#fff}
+.seg button:focus-visible,.chip:focus-visible,.primary:focus-visible{outline:2px solid var(--read);outline-offset:2px}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.legend div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px}
+.legend b{display:block;margin-bottom:2px}
+.empty{background:var(--card);border:1px dashed var(--line);border-radius:8px;padding:18px;color:var(--mut)}
+@media (max-width:620px){ .row{grid-template-columns:minmax(0,1fr)} .seg{width:100%} .seg button{flex:1;padding:6px 4px} }
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <h1>RC Room Designation</h1>
+    <p class="mut">Choose how the RC Briefing handles each room you're in that has had traffic since Mon 9 Nov. I've pre-set each room from its name, its message volume and how much of its traffic comes from bots. Change any that are wrong, then press <b>Save and finish</b>. Every change saves as you go.</p>
+  </header>
+
+  <div class="legend">
+    <div><b class="k-always">Always review</b>Every post is surfaced for you to read, as with #important.</div>
+    <div><b class="k-read">Worth reading</b>Surfaced when something material happens: decisions, figures, escalations.</div>
+    <div><b class="k-skim">Skim</b>One-line summary of the room.</div>
+    <div><b class="k-quiet">On call</b>Counts only, unless a trigger fires (a deal of $350K or more, an outage, a security issue).</div>
+  </div>
+  <p class="mut" style="font-size:13px">Not listed: 1:1 and group DMs. They're always handled by the direct-message rule (Needs you if there's an open ask, otherwise Worth reading). #important is fixed at Always review.</p>
+
+  <div class="bar">
+    <div class="tally" id="tally"></div>
+    <div class="actions">
+      <span class="saved" id="saved"></span>
+      <button class="primary" id="finish" type="button" disabled>Save and finish</button>
+    </div>
+  </div>
+  <div class="filters" id="filters" role="group" aria-label="Filter rooms"></div>
+  <section id="list"><div class="empty" id="empty">Loading rooms…</div></section>
+</main>
+
+<script>
+(function(){
+  var TIERS=[["always","Always review"],["read","Worth reading"],["skim","Skim"],["quiet","On call"]];
+  var rooms=[], db=null, filter="all";
+  var $list=document.getElementById("list"), $tally=document.getElementById("tally"),
+      $saved=document.getElementById("saved"), $finish=document.getElementById("finish"),
+      $filters=document.getElementById("filters");
+
+  function el(tag,attrs,text){var e=document.createElement(tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e;}
+
+  function renderFilters(){
+    $filters.textContent="";
+    [["all","All"],["changed","Changed by you"]].concat(TIERS).forEach(function(f){
+      var b=el("button",{type:"button",class:"chip","aria-pressed":String(filter===f[0])},f[1]);
+      b.onclick=function(){filter=f[0];renderFilters();render();};
+      $filters.appendChild(b);
+    });
+  }
+  function tally(){
+    $tally.textContent="";
+    TIERS.forEach(function(t){
+      var n=rooms.filter(function(r){return r.tier===t[0];}).length;
+      var s=el("span",{class:"k-"+t[0]}); s.appendChild(el("b",null,String(n))); s.appendChild(document.createTextNode(t[1]));
+      $tally.appendChild(s);
+    });
+  }
+  function render(){
+    tally();
+    $list.textContent="";
+    var shown=rooms.filter(function(r){
+      if(filter==="all")return true;
+      if(filter==="changed")return r.tier!==r.proposed;
+      return r.tier===filter;
+    });
+    if(!rooms.length){$list.appendChild(el("div",{class:"empty"},"No rooms loaded yet. Ask Claude to seed the room list."));return;}
+    if(!shown.length){$list.appendChild(el("div",{class:"empty"},"No rooms match this filter."));return;}
+    shown.forEach(function(r){
+      var row=el("div",{class:"row"});
+      var nm=el("div",{class:"name"});
+      var b=el("b",null,(r.t==="c"?"#":"")+r.name);
+      if(r.tier!==r.proposed)b.appendChild(el("span",{class:"changed"},"changed"));
+      nm.appendChild(b);
+      var bits=[r.n+" msgs since 9 Nov"];
+      if(r.mentions)bits.push(r.mentions+" @mentions of you");
+      if(r.bots)bits.push(Math.round(100*r.bots/Math.max(r.n,1))+"% bots");
+      bits.push(r.t==="c"?"channel":"private group");
+      nm.appendChild(el("small",null,bits.join(" · ")));
+      var seg=el("div",{class:"seg",role:"group","aria-label":"Tier for "+r.name});
+      TIERS.forEach(function(t){
+        var btn=el("button",{type:"button",class:t[0],"aria-pressed":String(r.tier===t[0])},t[1]);
+        if(r.locked&&t[0]!=="always")btn.disabled=true;
+        btn.onclick=function(){setTier(r,t[0]);};
+        seg.appendChild(btn);
+      });
+      row.appendChild(nm);row.appendChild(seg);$list.appendChild(row);
+    });
+  }
+  var pending=Promise.resolve();
+  function setTier(r,tier){
+    if(r.tier===tier||!db)return;
+    r.tier=tier;render();
+    $saved.className="saved";$saved.textContent="Saving…";
+    pending=pending.then(function(){
+      return db.doc("rooms/"+r.id).update({tier:tier,changed_at:new Date().toISOString()});
+    }).then(function(){$saved.className="saved ok";$saved.textContent="Saved";},
+      function(e){$saved.className="saved";$saved.textContent="Couldn't save ("+(e&&e.code||"error")+"). Try again.";});
+  }
+  $finish.onclick=function(){
+    if(!db)return;
+    $finish.disabled=true;$saved.className="saved";$saved.textContent="Saving…";
+    pending.then(function(){return db.doc("meta/status").set({done:true,done_at:new Date().toISOString()});})
+      .then(function(){$saved.className="saved ok";$saved.textContent="Saved. Tell Claude you're done, and it will apply these.";$finish.disabled=false;},
+            function(e){$saved.textContent="Couldn't save ("+(e&&e.code||"error")+").";$finish.disabled=false;});
+  };
+
+  renderFilters();
+  var timer=setTimeout(function(){ if(!rooms.length){ $list.textContent=""; $list.appendChild(el("div",{class:"empty"},"The room list didn't load. Reload the page, or check you're signed in to claude.ai.")); } },10000);
+  (window.claude&&window.claude.use?window.claude.use("db"):Promise.resolve(null)).then(function(d){
+    db=d;
+    if(!db){clearTimeout(timer);$list.textContent="";$list.appendChild(el("div",{class:"empty"},"Saving isn't available in this view. Open the page on claude.ai while signed in."));return;}
+    $finish.disabled=false;
+    db.collection("rooms").onSnapshot(function(snap){
+      clearTimeout(timer);
+      rooms=snap.docs.map(function(s){var x=s.data()||{};x.id=s.id;return x;})
+        .sort(function(a,b){var o={always:0,read:1,skim:2,quiet:3};return (o[a.proposed]-o[b.proposed])||(b.n-a.n);});
+      render();
+    },function(e){clearTimeout(timer);$list.textContent="";$list.appendChild(el("div",{class:"empty"},"Couldn't read the room list ("+e.code+")."));});
+  });
+})();
+</script>
