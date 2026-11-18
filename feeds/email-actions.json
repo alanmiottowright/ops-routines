@@ -1,13 +1,165 @@
 [
-{"kind":"my-action","thread_id":"1a1eb91eaa251b7b","subject":"Rocket.Chat // Avalara Account Review","who":"Avalara (Rachel LaCava)","ask":"Avalara wants to schedule annual account review ahead of early-Jan renewal","status":"due in 5 days","elapsed_bd":1},
-{"kind":"my-action","thread_id":"1a1a1240355ef215","subject":"Luis Zaleta to legal@ (via legal alias)","who":"Luis Zaleta (internal)","ask":"Inbound request routed through legal@ awaiting my decision","status":"overdue","elapsed_bd":11},
-{"kind":"my-action","thread_id":"1a19dc256ccd3130","subject":"Endeavor Q3 reporting","who":"Sam Foster (Endeavor)","ask":"Sam Foster replied 5 Nov to my Q3 update; open item needs my response","status":"overdue","elapsed_bd":9},
-{"kind":"waiting","thread_id":"1a1c647e6731c3f9","subject":"Change of Address","who":"CSC Global","ask":"Asked CSC to confirm any Virginia correspondence received this week","status":"due in 4 days","elapsed_bd":1},
-{"kind":"waiting","thread_id":"1a1b1f0a52edf2f5","subject":"Address Confirmation","who":"CSC Global","ask":"Address confirmation sent; awaiting CSC reply","status":"overdue","elapsed_bd":8},
-{"kind":"waiting","thread_id":"1a189413fed58d8c","subject":"Brex alert forwarded to team","who":"Nova Gestão / Accounting","ask":"Forwarded Brex alert; no reply from team","status":"overdue","elapsed_bd":14},
-{"kind":"elsewhere","subject":"Joshua Stuart severance payroll #55 (pay date 24 Nov)","who":"Insperity","ask":"Approve payroll #55 in portal (Fernanda handling)","status":"pending","elapsed_bd":0,"due":"2026-11-24","system":"Insperity"},
-{"kind":"elsewhere","subject":"Maryland FAMLI registration for Insperity PEO","who":"Insperity / MD FAMLI","ask":"Register with FAMLI per Insperity invitation","status":"pending","elapsed_bd":7,"system":"MD FAMLI portal"},
-{"kind":"elsewhere","subject":"Deel items not synced to NetSuite","who":"Deel","ask":"Review unsynced items","status":"pending","elapsed_bd":0,"system":"Deel"},
-{"kind":"stale","thread_id":"1a159ef5631b2b20","subject":"Insperity fwd to People team","who":"Internal","ask":"No reply after 21 bd; retired","status":"overdue","elapsed_bd":21},
-{"kind":"stale","thread_id":"1a13e8b535dbc4ad","subject":"Bruno Bin request","who":"Bruno Bin (internal)","ask":"Inbound ask 15 Oct, 24 bd; retired","status":"overdue","elapsed_bd":24}
+ {
+  "kind": "my-action",
+  "thread_id": "1a1eb91eaa251b7b",
+  "subject": "Rocket.Chat // Avalara Account Review",
+  "who": "Avalara (Rachel LaCava)",
+  "ask": "Avalara wants to schedule annual account review ahead of early-Jan renewal",
+  "status": "due in 5 days",
+  "elapsed_bd": 1
+ },
+ {
+  "kind": "my-action",
+  "thread_id": "1a1a1240355ef215",
+  "subject": "Luis Zaleta to legal@ (via legal alias)",
+  "who": "Luis Zaleta (internal)",
+  "ask": "Inbound request routed through legal@ awaiting my decision",
+  "status": "overdue",
+  "elapsed_bd": 11
+ },
+ {
+  "kind": "my-action",
+  "thread_id": "1a19dc256ccd3130",
+  "subject": "Endeavor Q3 reporting",
+  "who": "Sam Foster (Endeavor)",
+  "ask": "Sam Foster replied 5 Nov to my Q3 update; open item needs my response",
+  "status": "overdue",
+  "elapsed_bd": 9
+ },
+ {
+  "kind": "waiting",
+  "thread_id": "1a1c647e6731c3f9",
+  "subject": "Change of Address",
+  "who": "CSC Global",
+  "ask": "Asked CSC to confirm any Virginia correspondence received this week",
+  "status": "due in 4 days",
+  "elapsed_bd": 1
+ },
+ {
+  "kind": "waiting",
+  "thread_id": "1a1b1f0a52edf2f5",
+  "subject": "Address Confirmation",
+  "who": "CSC Global",
+  "ask": "Address confirmation sent; awaiting CSC reply",
+  "status": "overdue",
+  "elapsed_bd": 8
+ },
+ {
+  "kind": "waiting",
+  "thread_id": "1a189413fed58d8c",
+  "subject": "Brex alert forwarded to team",
+  "who": "Nova Gest\u00e3o / Accounting",
+  "ask": "Forwarded Brex alert; no reply from team",
+  "status": "overdue",
+  "elapsed_bd": 14
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Joshua Stuart severance payroll #55 (pay date 24 Nov)",
+  "who": "Insperity",
+  "ask": "Approve payroll #55 in portal (Fernanda handling)",
+  "status": "pending",
+  "elapsed_bd": 0,
+  "due": "2026-11-24",
+  "system": "Insperity"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Maryland FAMLI registration for Insperity PEO",
+  "who": "Insperity / MD FAMLI",
+  "ask": "Register with FAMLI per Insperity invitation",
+  "status": "pending",
+  "elapsed_bd": 7,
+  "system": "MD FAMLI portal"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Deel items not synced to NetSuite",
+  "who": "Deel",
+  "ask": "Review unsynced items",
+  "status": "pending",
+  "elapsed_bd": 0,
+  "system": "Deel"
+ },
+ {
+  "kind": "stale",
+  "thread_id": "1a159ef5631b2b20",
+  "subject": "Insperity fwd to People team",
+  "who": "Internal",
+  "ask": "No reply after 21 bd; retired",
+  "status": "overdue",
+  "elapsed_bd": 21
+ },
+ {
+  "kind": "stale",
+  "thread_id": "1a13e8b535dbc4ad",
+  "subject": "Bruno Bin request",
+  "who": "Bruno Bin (internal)",
+  "ask": "Inbound ask 15 Oct, 24 bd; retired",
+  "status": "overdue",
+  "elapsed_bd": 24
+ },
+ {
+  "kind": "my-action",
+  "thread_id": "19d08425787838aa",
+  "subject": "Union Square < > Rocket.chat",
+  "who": "Jon Shalowitz (Union Square Advisors)",
+  "ask": "Jon proposes a market catch-up call next week or the following (sent 18 Nov)",
+  "status": "due in 3 days",
+  "elapsed_bd": 0
+ },
+ {
+  "kind": "my-action",
+  "thread_id": "19ffc6efab801fa2",
+  "subject": "Management Carve-out, Update and final steps",
+  "who": "Arjun Jain (NEA)",
+  "ask": "NEA signed off 13 Nov and said to share with other board members for comment/approval; confirm that went out",
+  "status": "quiet \u2014 confirm",
+  "elapsed_bd": 3
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Damovo Certification Letter HZD RfP (LR-1126) signature",
+  "who": "Thiago Paix\u00e3o",
+  "ask": "Review and sign in e-sign portal (requested 16 Nov)",
+  "status": "pending",
+  "elapsed_bd": 2,
+  "system": "E-sign (Zoho Sign)"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Wise transfer paused: 6,430 EUR incoming",
+  "who": "Wise",
+  "ask": "Provide sender details so the payment is not rejected",
+  "status": "pending",
+  "elapsed_bd": 3,
+  "system": "Wise"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Zoho CRM deal approvals (Calcagni 17 Nov, Gabriel Engel 13 Nov)",
+  "who": "Zoho CRM",
+  "ask": "Approve or reject submitted deals",
+  "status": "pending",
+  "elapsed_bd": 1,
+  "system": "Zoho CRM"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Insperity annual nondiscrimination testing questionnaire",
+  "who": "Insperity",
+  "ask": "Submit the required questionnaire",
+  "status": "pending",
+  "elapsed_bd": 1,
+  "system": "Insperity"
+ },
+ {
+  "kind": "elsewhere",
+  "subject": "Share request: Board Materials folder",
+  "who": "Yan Lobato (yan.lobato.ext@)",
+  "ask": "You own the folder; grant or decline access",
+  "status": "pending",
+  "elapsed_bd": 2,
+  "system": "Google Drive"
+ }
 ]
