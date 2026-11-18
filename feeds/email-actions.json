@@ -1,0 +1,13 @@
+[
+{"kind":"my-action","thread_id":"1a1eb91eaa251b7b","subject":"Rocket.Chat // Avalara Account Review","who":"Avalara (Rachel LaCava)","ask":"Avalara wants to schedule annual account review ahead of early-Jan renewal","status":"due in 5 days","elapsed_bd":1},
+{"kind":"my-action","thread_id":"1a1a1240355ef215","subject":"Luis Zaleta to legal@ (via legal alias)","who":"Luis Zaleta (internal)","ask":"Inbound request routed through legal@ awaiting my decision","status":"overdue","elapsed_bd":11},
+{"kind":"my-action","thread_id":"1a19dc256ccd3130","subject":"Endeavor Q3 reporting","who":"Sam Foster (Endeavor)","ask":"Sam Foster replied 5 Nov to my Q3 update; open item needs my response","status":"overdue","elapsed_bd":9},
+{"kind":"waiting","thread_id":"1a1c647e6731c3f9","subject":"Change of Address","who":"CSC Global","ask":"Asked CSC to confirm any Virginia correspondence received this week","status":"due in 4 days","elapsed_bd":1},
+{"kind":"waiting","thread_id":"1a1b1f0a52edf2f5","subject":"Address Confirmation","who":"CSC Global","ask":"Address confirmation sent; awaiting CSC reply","status":"overdue","elapsed_bd":8},
+{"kind":"waiting","thread_id":"1a189413fed58d8c","subject":"Brex alert forwarded to team","who":"Nova Gestão / Accounting","ask":"Forwarded Brex alert; no reply from team","status":"overdue","elapsed_bd":14},
+{"kind":"elsewhere","subject":"Joshua Stuart severance payroll #55 (pay date 24 Nov)","who":"Insperity","ask":"Approve payroll #55 in portal (Fernanda handling)","status":"pending","elapsed_bd":0,"due":"2026-11-24","system":"Insperity"},
+{"kind":"elsewhere","subject":"Maryland FAMLI registration for Insperity PEO","who":"Insperity / MD FAMLI","ask":"Register with FAMLI per Insperity invitation","status":"pending","elapsed_bd":7,"system":"MD FAMLI portal"},
+{"kind":"elsewhere","subject":"Deel items not synced to NetSuite","who":"Deel","ask":"Review unsynced items","status":"pending","elapsed_bd":0,"system":"Deel"},
+{"kind":"stale","thread_id":"1a159ef5631b2b20","subject":"Insperity fwd to People team","who":"Internal","ask":"No reply after 21 bd; retired","status":"overdue","elapsed_bd":21},
+{"kind":"stale","thread_id":"1a13e8b535dbc4ad","subject":"Bruno Bin request","who":"Bruno Bin (internal)","ask":"Inbound ask 15 Oct, 24 bd; retired","status":"overdue","elapsed_bd":24}
+]
