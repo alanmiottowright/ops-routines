@@ -1,1 +1,18 @@
-[{"rid":"69eba23be604781c51e3a357","room":"RevOps Alignment (Achy, Alan, Amanda)","ask":"Achylley asks you to review the updated FY27 comp proposal, esp. General Policy items that affect sales","age_days":0,"held_since":"2026-11-19","link":"https://open.rocket.chat/group/x?msg=JkLC5NgTruv8x4zXx"},{"rid":"6a0c7401f14e6cf35661c95a","room":"Guilherme Barbosa","ask":"Asks you to add him to a Rocket.Chat group (members-list link)","age_days":0,"held_since":"2026-11-19","link":"https://open.rocket.chat/direct/6a0c7401f14e6cf35661c95a?msg=iT8H6Ew6b7di9hKmG"}]
+[
+ {
+  "rid": "69eba23be604781c51e3a357",
+  "room": "RevOps Alignment (Achy, Alan, Amanda)",
+  "ask": "Achylley asks you to review the updated FY27 comp proposal, esp. General Policy items that affect sales",
+  "age_days": 0,
+  "held_since": "2026-11-19",
+  "link": "https://open.rocket.chat/group/69eba23be604781c51e3a357?msg=JkLC5NgTruv8x4zXx"
+ },
+ {
+  "rid": "6a0c7401f14e6cf35661c95a",
+  "room": "Guilherme Barbosa",
+  "ask": "Asks you to add him to a Rocket.Chat group (members-list link)",
+  "age_days": 0,
+  "held_since": "2026-11-19",
+  "link": "https://open.rocket.chat/direct/6a0c7401f14e6cf35661c95a?msg=iT8H6Ew6b7di9hKmG"
+ }
+]

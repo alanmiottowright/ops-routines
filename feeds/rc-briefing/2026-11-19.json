@@ -1,153 +1,153 @@
 {
-  "id": "2026-11-19",
-  "kind": "daily",
-  "generated_at": "2026-11-19T21:11:52Z",
-  "label": "Thu 19 Nov",
-  "tab": "19 Nov",
-  "window_text": "Unread as of 4:00 pm ET",
-  "counts": {
-    "needs": 2,
-    "read": 4,
-    "rooms_triaged": 20,
-    "marked_read": 18,
-    "held": 2
+ "id": "2026-11-19",
+ "kind": "daily",
+ "generated_at": "2026-11-19T21:11:52Z",
+ "label": "Thu 19 Nov",
+ "tab": "19 Nov",
+ "window_text": "Unread as of 4:00 pm ET",
+ "counts": {
+  "needs": 2,
+  "read": 4,
+  "rooms_triaged": 20,
+  "marked_read": 18,
+  "held": 2
+ },
+ "needs": [
+  {
+   "room": "RevOps Alignment (Achy, Alan, Amanda)",
+   "rid": "69eba23be604781c51e3a357",
+   "who": "Achylley Macedo",
+   "ask": "Updated FY27 comp proposal ready for your review; General Policy tab has items impacting sales that need your Review; not the Skelly version yet",
+   "age_days": 0,
+   "link": "https://open.rocket.chat/group/69eba23be604781c51e3a357?msg=JkLC5NgTruv8x4zXx"
   },
-  "needs": [
-    {
-      "room": "RevOps Alignment (Achy, Alan, Amanda)",
-      "rid": "69eba23be604781c51e3a357",
-      "who": "Achylley Macedo",
-      "ask": "Updated FY27 comp proposal ready for your review; General Policy tab has items impacting sales that need your Review; not the Skelly version yet",
-      "age_days": 0,
-      "link": "https://open.rocket.chat/group/x?msg=JkLC5NgTruv8x4zXx"
-    },
-    {
-      "room": "Guilherme Barbosa",
-      "rid": "6a0c7401f14e6cf35661c95a",
-      "who": "Guilherme Barbosa",
-      "ask": "Asks you to add him to a Rocket.Chat group (members list)",
-      "age_days": 0,
-      "link": "https://open.rocket.chat/direct/6a0c7401f14e6cf35661c95a?msg=iT8H6Ew6b7di9hKmG"
-    }
-  ],
-  "possibly_missed": [],
-  "read": [
-    {
-      "room": "rocketchat-security",
-      "rid": "YFGDi4YmQEda4FkPC",
-      "who": "Nazareno Bucciarelli",
-      "summary": "ReDoS found in SAML path that needs no login (CORE-3073); same regexp as an admin-only gap in the exchange integration",
-      "why": "Pre-auth security exposure on a core path",
-      "link": "https://open.rocket.chat/channel/x?msg=b32uuGScRGw2Cz5p6",
-      "important": true
-    },
-    {
-      "room": "rocketchat-security",
-      "rid": "YFGDi4YmQEda4FkPC",
-      "who": "Gabriel Engel",
-      "summary": "Company phone number changed on our Google profile; Amanda says not changed on BizSys side and is asking the supplier",
-      "why": "Unexplained change to public company profile, possible tampering",
-      "link": "https://open.rocket.chat/channel/x?msg=pjjr2FuGLh8hCcPFD",
-      "important": true
-    },
-    {
-      "room": "[RevOps] Pipeline Reports - NORAM",
-      "rid": "6a67bb38afb371486f901b3d",
-      "who": "Achylley Macedo",
-      "summary": "NORAM check-in: Mgr low $126.7K flat, high $1.47M (down $8.2K, Lumen moved out of Q4); no new closed-won since 13 Nov. Marine Corp ($1.01M, 20 Nov) and Booz Allen ($133.2K, 19 Nov) are high-only and being challenged",
-      "why": "Q4 forecast and a $1M deal closing tomorrow",
-      "link": "https://open.rocket.chat/group/x?msg=zgZAu3CasN2gh64sW",
-      "important": false
-    },
-    {
-      "room": "EMEA Partnerships & Sales/CSM",
-      "rid": "6733675b1adb062ceacc927f",
-      "who": "Carlos Mayorca / Bruno Weiblen",
-      "summary": "SHI says it cannot quote Rocket.Chat to CNL tender members after 23 Nov; Bruno says CNL agreed our terms and the contract renewal just needs formalizing",
-      "why": "Partner channel risk for university renewals in 4 days",
-      "link": "https://open.rocket.chat/group/x?msg=GP5jrJdtpNpmtarZz",
-      "important": false
-    }
-  ],
-  "skim": [
-    {
-      "room": "EMEA Sales Team",
-      "gist": "Philippine Army: UR Solutions asked for a preliminary proposal for 9,000 users (very early), ownership to be settled; tender template from Damovo; ACSC expo materials",
-      "link": "https://open.rocket.chat/channel/x?msg=Fv4t4eumM2E2CfHie"
-    },
-    {
-      "room": "Partner Portal",
-      "gist": "Architecture and tech stack kickoff held; Utsav drafting outline; Bruno B wants mid-Dec internal launch, partners in Jan",
-      "link": "https://open.rocket.chat/group/x?msg=OvQsGy2zvYnyU6zQQ"
-    },
-    {
-      "room": "NORAM Marketing",
-      "gist": "PACOM read-ahead approved to send; TechNet lead list; WEST suites about $12K",
-      "link": "https://open.rocket.chat/group/x?msg=hn2hsa6oXNqnL9sjs"
-    },
-    {
-      "room": "Marketing&Operations",
-      "gist": "Apollo sequence for M365 outage webinar ready; 115-contact list upload waiting on SLA; HubSpot emails to be disabled only for FR/IT",
-      "link": "https://open.rocket.chat/group/x?msg=TQqfpphkiptNGFcuo"
-    },
-    {
-      "room": "rocketchat-dev",
-      "gist": "UI overlap and profile button glitch, CI re-run help on docs PR",
-      "link": "https://open.rocket.chat/channel/x?msg=y4o7swWNgG3w4twKv"
-    },
-    {
-      "room": "rocketchat-q-and-a",
-      "gist": "Koko daily question",
-      "link": "https://open.rocket.chat/channel/x?msg=jDfAMFj42oZEPRpSr"
-    }
-  ],
-  "quiet": [
-    {
-      "room": "rocketchat-sales-alerts",
-      "count": 30
-    },
-    {
-      "room": "Customer Support Backroom",
-      "count": 24
-    },
-    {
-      "room": "sales-product-tour-requests",
-      "count": 8
-    },
-    {
-      "room": "sales-hand-raises",
-      "count": 6
-    },
-    {
-      "room": "Rocket.Chat Core Team",
-      "count": 10
-    },
-    {
-      "room": "cloud-sre-support",
-      "count": 2
-    },
-    {
-      "room": "confluence-publishers",
-      "count": 1
-    },
-    {
-      "room": "random",
-      "count": 1
-    },
-    {
-      "room": "Koko (DM, bot)",
-      "count": 1
-    }
-  ],
-  "quiet_note": "Trigger fired in Pipeline Reports (Marine Corp $1.01M).",
-  "watchlist": [
-    "CNL tender renewal and SHI cutoff",
-    "Philippine Army 9,000 users via UR Solutions",
-    "SAML pre-auth ReDoS CORE-3073"
-  ],
-  "integrity": "20 unread → 18 marked read, 2 held; the re-check matched. No failures. Task prompt mentioned tier commands, stars and Part A0, but PROMPT.md has none, so none were run.",
-  "dm": {
-    "rid": "W5YZAb7jeTroNAFvf",
-    "parent_id": "ZxwqMqoFwh92A4rfZ"
+  {
+   "room": "Guilherme Barbosa",
+   "rid": "6a0c7401f14e6cf35661c95a",
+   "who": "Guilherme Barbosa",
+   "ask": "Asks you to add him to a Rocket.Chat group (members list)",
+   "age_days": 0,
+   "link": "https://open.rocket.chat/direct/6a0c7401f14e6cf35661c95a?msg=iT8H6Ew6b7di9hKmG"
   }
+ ],
+ "possibly_missed": [],
+ "read": [
+  {
+   "room": "rocketchat-security",
+   "rid": "YFGDi4YmQEda4FkPC",
+   "who": "Nazareno Bucciarelli",
+   "summary": "ReDoS found in SAML path that needs no login (CORE-3073); same regexp as an admin-only gap in the exchange integration",
+   "why": "Pre-auth security exposure on a core path",
+   "link": "https://open.rocket.chat/channel/rocketchat-security?msg=b32uuGScRGw2Cz5p6",
+   "important": true
+  },
+  {
+   "room": "rocketchat-security",
+   "rid": "YFGDi4YmQEda4FkPC",
+   "who": "Gabriel Engel",
+   "summary": "Company phone number changed on our Google profile; Amanda says not changed on BizSys side and is asking the supplier",
+   "why": "Unexplained change to public company profile, possible tampering",
+   "link": "https://open.rocket.chat/channel/rocketchat-security?msg=pjjr2FuGLh8hCcPFD",
+   "important": true
+  },
+  {
+   "room": "[RevOps] Pipeline Reports - NORAM",
+   "rid": "6a67bb38afb371486f901b3d",
+   "who": "Achylley Macedo",
+   "summary": "NORAM check-in: Mgr low $126.7K flat, high $1.47M (down $8.2K, Lumen moved out of Q4); no new closed-won since 13 Nov. Marine Corp ($1.01M, 20 Nov) and Booz Allen ($133.2K, 19 Nov) are high-only and being challenged",
+   "why": "Q4 forecast and a $1M deal closing tomorrow",
+   "link": "https://open.rocket.chat/group/6a67bb38afb371486f901b3d?msg=zgZAu3CasN2gh64sW",
+   "important": false
+  },
+  {
+   "room": "EMEA Partnerships & Sales/CSM",
+   "rid": "6733675b1adb062ceacc927f",
+   "who": "Carlos Mayorca / Bruno Weiblen",
+   "summary": "SHI says it cannot quote Rocket.Chat to CNL tender members after 23 Nov; Bruno says CNL agreed our terms and the contract renewal just needs formalizing",
+   "why": "Partner channel risk for university renewals in 4 days",
+   "link": "https://open.rocket.chat/group/6733675b1adb062ceacc927f?msg=GP5jrJdtpNpmtarZz",
+   "important": false
+  }
+ ],
+ "skim": [
+  {
+   "room": "EMEA Sales Team",
+   "gist": "Philippine Army: UR Solutions asked for a preliminary proposal for 9,000 users (very early), ownership to be settled; tender template from Damovo; ACSC expo materials",
+   "link": "https://open.rocket.chat/channel/emea-sales-team?msg=Fv4t4eumM2E2CfHie"
+  },
+  {
+   "room": "Partner Portal",
+   "gist": "Architecture and tech stack kickoff held; Utsav drafting outline; Bruno B wants mid-Dec internal launch, partners in Jan",
+   "link": "https://open.rocket.chat/group/6af5b8d1fdddd0020076b321?msg=OvQsGy2zvYnyU6zQQ"
+  },
+  {
+   "room": "NORAM Marketing",
+   "gist": "PACOM read-ahead approved to send; TechNet lead list; WEST suites about $12K",
+   "link": "https://open.rocket.chat/group/t5aBMFFDHdCdfCbDK?msg=hn2hsa6oXNqnL9sjs"
+  },
+  {
+   "room": "Marketing&Operations",
+   "gist": "Apollo sequence for M365 outage webinar ready; 115-contact list upload waiting on SLA; HubSpot emails to be disabled only for FR/IT",
+   "link": "https://open.rocket.chat/group/EiSvtrMm6zQ3gFqxC?msg=TQqfpphkiptNGFcuo"
+  },
+  {
+   "room": "rocketchat-dev",
+   "gist": "UI overlap and profile button glitch, CI re-run help on docs PR",
+   "link": "https://open.rocket.chat/channel/rocketchat-dev?msg=y4o7swWNgG3w4twKv"
+  },
+  {
+   "room": "rocketchat-q-and-a",
+   "gist": "Koko daily question",
+   "link": "https://open.rocket.chat/channel/rocketchat-q-and-a?msg=jDfAMFj42oZEPRpSr"
+  }
+ ],
+ "quiet": [
+  {
+   "room": "rocketchat-sales-alerts",
+   "count": 30
+  },
+  {
+   "room": "Customer Support Backroom",
+   "count": 24
+  },
+  {
+   "room": "sales-product-tour-requests",
+   "count": 8
+  },
+  {
+   "room": "sales-hand-raises",
+   "count": 6
+  },
+  {
+   "room": "Rocket.Chat Core Team",
+   "count": 10
+  },
+  {
+   "room": "cloud-sre-support",
+   "count": 2
+  },
+  {
+   "room": "confluence-publishers",
+   "count": 1
+  },
+  {
+   "room": "random",
+   "count": 1
+  },
+  {
+   "room": "Koko (DM, bot)",
+   "count": 1
+  }
+ ],
+ "quiet_note": "Trigger fired in Pipeline Reports (Marine Corp $1.01M).",
+ "watchlist": [
+  "CNL tender renewal and SHI cutoff",
+  "Philippine Army 9,000 users via UR Solutions",
+  "SAML pre-auth ReDoS CORE-3073"
+ ],
+ "integrity": "20 unread \u2192 18 marked read, 2 held; the re-check matched. No failures. Task prompt mentioned tier commands, stars and Part A0, but PROMPT.md has none, so none were run.",
+ "dm": {
+  "rid": "W5YZAb7jeTroNAFvf",
+  "parent_id": "ZxwqMqoFwh92A4rfZ"
+ }
 }
