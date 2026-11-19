@@ -163,3 +163,7 @@ Context harvested by the RC triage routine ([[rocketchat-triage-routine]]). Each
 **Brazil CCT 2026/2027 wage provision (CCT 2026/2027 discussion, people-finance, 18-Nov-2026):** Employer union (Sindicato Patronal) suggests provisioning 4.49% (12-month INPC) from 01-Nov-2026 while the union agreement is pending; salaries are normally updated with retroactive pay once agreed. Fernanda Bernardes (finance) asking the team for forecast values; no action required yet.
 
 **AeC contract restructure (AeC opportunity, 18-Nov-2026):** AeC uses about half of 500 users + 500 Mac Packs (contract to Jun-2028, ACV $151,181, TCV $453,544). Proposal: keep ~$226,771 of remaining value stretched over 3 years instead of 1.5. Alan approved 18-Nov; Bruno Weiblen agreed; Marcela Lima to take it back to AeC.
+
+**CNL tender renewal (EMEA Partnerships & Sales/CSM, 19-Nov-2026):** SHI says it cannot propose Rocket.Chat to CNL tender members after 23-Nov-2026. Bruno Weiblen: CNL agreed our terms, contract renewal now needs formalizing.
+**Philippine Army via UR Solutions (EMEA Sales Team, 19-Nov-2026):** Preliminary proposal requested for 9,000 users, very early; third defense account via UR Solutions after NISF and Navy. Owner not yet assigned.
+**SAML pre-auth ReDoS (rocketchat-security, 18-Nov-2026):** Same regexp as an admin-only exchange-integration ReDoS exists in a SAML path needing no login; tracked as CORE-3073.
