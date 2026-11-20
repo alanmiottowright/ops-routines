@@ -1,0 +1,122 @@
+{
+  "id": "2026-11-20",
+  "kind": "daily",
+  "generated_at": "2026-11-20T21:15:00Z",
+  "label": "Fri 20 Nov",
+  "tab": "20 Nov",
+  "window_text": "Unread as of 4:00 pm ET",
+  "counts": {
+    "needs": 0,
+    "read": 3,
+    "rooms_triaged": 18,
+    "marked_read": 18,
+    "held": 0
+  },
+  "needs": [],
+  "possibly_missed": [],
+  "read": [
+    {
+      "room": "rocketchat-security",
+      "rid": "YFGDi4YmQEda4FkPC",
+      "who": "Nazareno Bucciarelli",
+      "summary": "Posted the PR with the fix on the private security fork (PR 907), in the thread on the open security issue.",
+      "why": "Security fix in progress; no action from you.",
+      "link": "https://open.rocket.chat/channel/rocketchat-security?msg=7JbjmPnLKJF2N74aN",
+      "important": false
+    },
+    {
+      "room": "CloudSmart Renewal 2027",
+      "rid": "6b0061857bb42858f2cde7a0",
+      "who": "Bruno Weiblen",
+      "summary": "CloudSmart renewal: US$65K credits up front against US$65K paid in 3 installments from 1-Jan; Skelly approved, said to be cash neutral. Gabriel puts pure AWS cost at ~US$45K/month, so credits cover only part of it. Cash-flow check due Monday.",
+      "why": "Cash-flow and cost exposure on a renewal he says you were aligned on.",
+      "link": "https://open.rocket.chat/group/7rxTFk5hguZikxFgg?msg=rFNsxQvfQAxvYj8xC",
+      "important": false
+    },
+    {
+      "room": "rocketchat-revenue-ops & sales-leadership",
+      "rid": "pyL4HvxswA3ajFoLs",
+      "who": "Christopher Skelly",
+      "summary": "Replying under your forecast thread: churn 'catastrophic' but manageable with key wins; says Damovo will keep its commitment once down-selected, no reason to expect papering delay. Venson cut to 200 users after restructuring.",
+      "why": "Q4 forecast and churn picture; Damovo is the $1.2M upside case.",
+      "link": "https://open.rocket.chat/group/rocketchat-revenue-ops-and-sales-leadership?msg=bL15EB6lnok5W4tEA",
+      "important": false
+    }
+  ],
+  "skim": [
+    {
+      "room": "Out of Band Comms SKU",
+      "gist": "Nicole Dinnadge wants a commercial model for the OOB offering as Virgin Atlantic moves forward and interest rises after last week's outage; Skelly says no speculative pricing yet, keep custom quotes and standardize discovery and delivery playbook.",
+      "link": "https://open.rocket.chat/group/JQvL9wG8sxfGmnsAC?msg=XkpLxFo4XxTfjeRpk"
+    },
+    {
+      "room": "rocketchat-dev",
+      "gist": "Bug reported: app uploads fail for unknown file extensions on 9.0; QA workspace bump bot post.",
+      "link": "https://open.rocket.chat/channel/rocketchat-dev?msg=PTxAECCWprdxjBztr"
+    }
+  ],
+  "quiet": [
+    {
+      "room": "rocketchat-sales-alerts",
+      "count": 30
+    },
+    {
+      "room": "sales-product-tour-requests",
+      "count": 6
+    },
+    {
+      "room": "Customer Support Backroom",
+      "count": 5
+    },
+    {
+      "room": "sales-hand-raises",
+      "count": 4
+    },
+    {
+      "room": "Koko DM",
+      "count": 1
+    },
+    {
+      "room": "rocketchat-website",
+      "count": 1
+    },
+    {
+      "room": "Core Team",
+      "count": 1
+    },
+    {
+      "room": "random",
+      "count": 1
+    },
+    {
+      "room": "rocketchat-q-and-a",
+      "count": 1
+    },
+    {
+      "room": "confluence-publishers",
+      "count": 1
+    },
+    {
+      "room": "amplify-linkedIn",
+      "count": 1
+    },
+    {
+      "room": "cloud-sre-support",
+      "count": 1
+    },
+    {
+      "room": "rocketchat-sales-ops",
+      "count": 0
+    }
+  ],
+  "quiet_note": "Nothing triggered.",
+  "watchlist": [
+    "CloudSmart renewal credits vs installments",
+    "Venson seat cut and Damovo timing"
+  ],
+  "integrity": "18 unread → 18 marked read, 0 held; the re-check matched (0 unread). No failures. Note: the PROMPT.md in the repo has no Part A0, tier commands or star step, so none were run.",
+  "dm": {
+    "rid": "W5YZAb7jeTroNAFvf",
+    "parent_id": "MzyyCvKXePKWzNYvi"
+  }
+}
