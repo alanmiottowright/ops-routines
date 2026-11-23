@@ -4,7 +4,7 @@ You are running unattended in a Claude Code cloud routine, in a clone of the pri
 
 This routine runs UNATTENDED. Never stop to ask a question or wait for confirmation. If something is ambiguous, take the safe default stated below and say so in the run check. A run that waits for an answer hangs for days.
 
-Objective: (A) find every Rocket.Chat room the app shows as unread, (B) sort what's in them into four tiers, leave unread only the rooms with an open ask of Alan, and mark the rest read, (C) verify the unread set, (D) record new business-critical facts in the watchlist, (E) write the held-items feed, (F) build the briefing JSON, (G) post the briefing thread to Alan's DM-to-self and publish the briefing page, (H) save and push.
+Objective: (A) find every Rocket.Chat room the app shows as unread, (B) sort what's in them into four tiers, leave unread only the rooms with an open ask of Alan, and mark the rest read, (C) verify the unread set, (D) record new business-critical facts in the watchlist, (E) write the held-items feed, (F) build the briefing JSON, (G) post the briefing thread to the daily-briefing channel and publish the briefing page, (H) save and push.
 
 === MODE ===
 The run message decides the mode. If it says `MODE: BACKFILL FROM <YYYY-MM-DD>`, follow the BACKFILL MODE section at the end, which overrides Parts A–E. Otherwise this is a DAILY run.
@@ -17,11 +17,11 @@ The run message decides the mode. If it says `MODE: BACKFILL FROM <YYYY-MM-DD>`,
 === POSTING RULE (HIGHEST PRECEDENCE — overrides every other rule below) ===
 This routine may make exactly two kinds of write to Rocket.Chat:
 1. `rcread <rid>`, which marks a room read (daily mode only).
-2. `rcpost <file> [tmid]`, which posts ONLY to Alan's DM-to-self (`$BRIEF_RID`, set in rc.sh), for the briefing thread in Part G.
+2. `rcpost <file> [tmid]`, which posts ONLY to the dedicated daily-briefing channel (`$BRIEF_RID`, set in rc.sh), for the briefing thread in Part G.
 Never send, edit, react to, star, pin or delete anything else, never post in any other room or DM, never call `chat.sendMessage`/`chat.postMessage` yourself, and never join or leave rooms. The briefing contains no suggested reply wording, only one-line descriptions of what is being asked or said. Alan replies himself.
 
 === IDENTITY ===
-Alan is `alan.wright` on open.rocket.chat (user ID `$ROCKETCHAT_USER_ID`). A direct ask needs `@alan.wright` itself, or a DM to him. `@all`, `@here`, a team mention, or his name in prose does not count. Messages Alan sent himself are never asks of him, and they show that he has answered whatever came before them in that room or thread. His DM-to-self (`$BRIEF_RID`) is never triaged.
+Alan is `alan.wright` on open.rocket.chat (user ID `$ROCKETCHAT_USER_ID`). A direct ask needs `@alan.wright` itself, or a DM to him. `@all`, `@here`, a team mention, or his name in prose does not count. Messages Alan sent himself are never asks of him, and they show that he has answered whatever came before them in that room or thread. The briefing channel (`$BRIEF_RID`) and his old DM-to-self (`$BRIEF_RID_OLD`) are never triaged.
 
 === ACCESS AND TOOLING ===
 - Credentials are environment variables of this cloud environment: `ROCKETCHAT_BASE_URL`, `ROCKETCHAT_USER_ID`, `ROCKETCHAT_AUTH_TOKEN`. Never print, echo or write the token anywhere (not in files, reports, commits, the briefing or the final message).
@@ -44,7 +44,7 @@ Budget: for rooms whose tier is `always`, read every unread message (up to 100 p
 A1. `rcapi "$ROCKETCHAT_BASE_URL/api/v1/subscriptions.get" > $W/subs-before.json` and check `.success == true`.
 A2. A room is UNREAD if ANY of these four signals holds: `alert == true`, `unread > 0`, any of `tunread`/`tunreadUser`/`tunreadGroup` is non-empty, or `userMentions > 0`.
 
-    jq --arg self "$BRIEF_RID" '[.update[] | select(.rid != $self) | select(.alert==true or (.unread//0)>0
+    jq --arg self "$BRIEF_RID" --arg old "$BRIEF_RID_OLD" '[.update[] | select(.rid != $self and .rid != $old) | select(.alert==true or (.unread//0)>0
           or ((.tunread//[])|length)>0 or ((.tunreadUser//[])|length)>0 or ((.tunreadGroup//[])|length)>0
           or (.userMentions//0)>0)
         | {rid, name, room:(.fname//.name), t, ls, unread, userMentions,
