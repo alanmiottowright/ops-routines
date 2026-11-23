@@ -28,3 +28,12 @@ rcpost() {
     '{message:({rid:$rid,msg:$m} + (if $tmid=="" then {} else {tmid:$tmid} end))}')
   rcapi -X POST "$ROCKETCHAT_BASE_URL/api/v1/chat.sendMessage" -d "$body" | jq -r 'if .success then .message._id else ("ERROR " + (.error//"unknown")) end'
 }
+
+# rcping <text>  -> posts ONE short notification line via the incoming webhook ($RC_WEBHOOK_URL, posts as rocket.cat
+# into the briefing channel). Used only for the "Briefing ready" ping with @alan.wright. Never print the URL.
+rcping() {
+  [ -n "${RC_WEBHOOK_URL:-}" ] || { echo "ERROR no RC_WEBHOOK_URL"; return 1; }
+  local code; code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 -X POST -H 'Content-Type: application/json' \
+    -d "$(jq -n --arg t "$1" '{text:$t}')" "$RC_WEBHOOK_URL")
+  [ "$code" = 200 ] && echo ok || echo "ERROR http $code"
+}
