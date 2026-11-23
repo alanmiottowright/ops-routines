@@ -1,0 +1,86 @@
+{
+  "id": "2026-11-23",
+  "kind": "daily",
+  "generated_at": "2026-11-23T21:10:26Z",
+  "label": "Mon 23 Nov",
+  "tab": "23 Nov",
+  "window_text": "Unread as of 4:00 pm ET",
+  "counts": {
+    "needs": 0,
+    "read": 1,
+    "rooms_triaged": 11,
+    "marked_read": 11,
+    "held": 0
+  },
+  "needs": [],
+  "possibly_missed": [],
+  "read": [
+    {
+      "room": "rocketchat-security",
+      "rid": "YFGDi4YmQEda4FkPC",
+      "who": "Nazareno Bucciarelli",
+      "summary": "Found a second way to freeze instances: authenticated users can send an unbounded avatar property that triggers a polynomial regexp (CORE-3096); fix in a separate PR. kaleman also flagged pwn.ai upload2shell, unsure if we're affected.",
+      "why": "Security exposure; availability risk to customer instances.",
+      "link": "https://open.rocket.chat/group/rocketchat-security?msg=YseCbu97ir3PbBEm3",
+      "important": false
+    }
+  ],
+  "skim": [
+    {
+      "room": "Rocket.Chat Core Team",
+      "gist": "Daniel Martinez's last day (farewell thread); 5-year anniversary post for Yash Rajpal.",
+      "link": "https://open.rocket.chat/group/rocket-chat-core-team?msg=EPPzQRcSJ8xL5Y5qH"
+    },
+    {
+      "room": "Marketing&Operations",
+      "gist": "Kristina asking about Apollo email limits and list upload (Julia on PTO); event-import task flood being checked by Daniel R.",
+      "link": "https://open.rocket.chat/group/marketing-and-operations?msg=GZd4HdMwqkaRtovGf"
+    },
+    {
+      "room": "[Ops Team] Sprint Planning & Review",
+      "gist": "Sprint 24 plan: Transactional Renewals/Zoho notes, lead assignment, TREA agent, SHI order playbook; several reviews awaiting feedback.",
+      "link": "https://open.rocket.chat/group/dCh8SYiaZyic422db?msg=37ktqxPQiaWCnZgk6"
+    },
+    {
+      "room": "cloud-sre-support",
+      "gist": "Feature request: FleetCommand 'Lock Export' button.",
+      "link": "https://open.rocket.chat/channel/cloud-sre-support?msg=ZMuSWvbrrM6j2tcDL"
+    },
+    {
+      "room": "rocketchat-dev",
+      "gist": "appsqa bot updated workspace to 9.1.0-rc.1.",
+      "link": "https://open.rocket.chat/channel/rocketchat-dev?msg=3bpy4RL5hyYJiuP8h"
+    }
+  ],
+  "quiet": [
+    {
+      "room": "rocketchat-sales-alerts",
+      "count": 28
+    },
+    {
+      "room": "random",
+      "count": 3
+    },
+    {
+      "room": "Koko",
+      "count": 2
+    },
+    {
+      "room": "rocketchat-sales-ops",
+      "count": 0
+    },
+    {
+      "room": "sales-hand-raises",
+      "count": 0
+    }
+  ],
+  "quiet_note": "Nothing triggered beyond the security item above.",
+  "watchlist": [
+    "Authenticated avatar-regex freeze (CORE-3096)"
+  ],
+  "integrity": "11 unread → 11 marked read, 0 held; the re-check matched (0 unread). No failures. Note: the PROMPT.md in the repo has no Part A0, tier commands or star step, so none were run.",
+  "dm": {
+    "rid": "6b04a6111b0e8554851a02c0",
+    "parent_id": "eLRNuhWcnhNxLh92W"
+  }
+}
