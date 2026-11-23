@@ -29,11 +29,15 @@ rcpost() {
   rcapi -X POST "$ROCKETCHAT_BASE_URL/api/v1/chat.sendMessage" -d "$body" | jq -r 'if .success then .message._id else ("ERROR " + (.error//"unknown")) end'
 }
 
-# rcping <text>  -> posts ONE short notification line via the incoming webhook ($RC_WEBHOOK_URL, posts as rocket.cat
-# into the briefing channel). Used only for the "Briefing ready" ping with @alan.wright. Never print the URL.
+# rcping <text-or-@file> [tmid]  -> posts via the incoming webhook ($RC_WEBHOOK_URL; posts as rocket.cat into the
+# briefing channel). With tmid the post is a thread reply. Pass @path to read the text from a file. Never print the URL.
 rcping() {
   [ -n "${RC_WEBHOOK_URL:-}" ] || { echo "ERROR no RC_WEBHOOK_URL"; return 1; }
+  local txt="$1"; case "$1" in @/*) txt=$(cat "${1#@}");; esac
   local code; code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 -X POST -H 'Content-Type: application/json' \
-    -d "$(jq -n --arg t "$1" '{text:$t}')" "$RC_WEBHOOK_URL")
+    -d "$(jq -n --arg t "$txt" --arg m "${2:-}" '{text:$t} + (if $m=="" then {} else {tmid:$m} end)')" "$RC_WEBHOOK_URL")
   [ "$code" = 200 ] && echo ok || echo "ERROR http $code"
 }
+# rchead  -> id of the newest top-level rocket.cat message in the briefing channel (the headline just posted)
+rchead() { rcapi "$ROCKETCHAT_BASE_URL/api/v1/groups.history?roomId=$BRIEF_RID&count=10" \
+    | jq -r '[.messages[]|select(.u.username=="rocket.cat" and (.tmid|not))][0]._id'; }

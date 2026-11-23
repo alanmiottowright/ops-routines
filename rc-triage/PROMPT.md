@@ -15,10 +15,9 @@ The run message decides the mode. If it says `MODE: BACKFILL FROM <YYYY-MM-DD>`,
 - `context/rocketchat-ops-watchlist.md`: the ops watchlist for Part D. Read it, and append new facts to it.
 
 === POSTING RULE (HIGHEST PRECEDENCE — overrides every other rule below) ===
-This routine may make exactly three kinds of write to Rocket.Chat:
+This routine may make exactly two kinds of write to Rocket.Chat:
 1. `rcread <rid>`, which marks a room read (daily mode only).
-2. `rcpost <file> [tmid]`, which posts ONLY to the dedicated daily-briefing channel (`$BRIEF_RID`, set in rc.sh), for the briefing thread in Part G.
-3. `rcping "<text>"`, the single briefing ping in Part G4a, sent through the incoming webhook (`$RC_WEBHOOK_URL`, posts as rocket.cat into the briefing channel). Nothing else may use the webhook.
+2. `rcping <text|@file> [tmid]`, which posts ONLY the briefing headline and its thread replies in Part G2 through the incoming webhook (`$RC_WEBHOOK_URL`, posts as rocket.cat into the briefing channel). Nothing else may use the webhook. `rcpost` is retired.
 Never send, edit, react to, star, pin or delete anything else, never post in any other room or DM, never call `chat.sendMessage`/`chat.postMessage` yourself, and never join or leave rooms. The briefing contains no suggested reply wording, only one-line descriptions of what is being asked or said. Alan replies himself.
 
 === IDENTITY ===
@@ -100,9 +99,12 @@ Order: `needs` oldest first. `read` puts #important first, then the rest by impo
 
 === PART G: POST THE BRIEFING AND PUBLISH THE PAGE ===
 G1. Page URL: the contents of `feeds/rc-briefing-artifact-url.txt`.
-G2. `python3 rc-triage/briefing_dm.py feeds/rc-briefing/<id>.json $W/dm "<page url>"` writes the thread as numbered text files and prints them in order. Post the parent first: `pid=$(rcpost $W/dm/00-parent.txt)`. Then post each reply in order with `rcpost <file> "$pid"`. Every result must be a message id. On "ERROR", retry that post once, then stop posting and record the failure in `integrity`. Save the parent id to the briefing JSON as `"dm": {"rid": "<BRIEF_RID>", "parent_id": "<pid>"}`.
+G2. `python3 rc-triage/briefing_dm.py feeds/rc-briefing/<id>.json $W/dm "<page url>"` writes the briefing as numbered text files (00-parent.txt, then replies). Post it as rocket.cat through the webhook, NOT with rcpost:
+    a. Headline: `rcping "@alan.wright Briefing ready: <n> need you, <n> worth reading (<one-phrase top item>)"` (the @alan.wright mention is what makes it unread and push). Expect `ok`.
+    b. `sleep 2; hid=$(rchead)`. It must be a message id.
+    c. For each file in `$W/dm/` in order (parent first, then replies): `rcping "@$f" "$hid"`; each must print `ok`.
+    On ERROR retry that post once, then stop and record the failure in `integrity`. Skip the whole post when needs + read = 0 and nothing triggered. Save `"dm": {"rid": "<BRIEF_RID>", "parent_id": "<hid>"}` in the briefing JSON.
 G3. Briefing page: run `python3 rc-triage/briefing_page.py > $W/rc-briefing.html`. If an Artifact tool is available in this session, publish that file to the page URL (do the Artifact `read` of the URL first, then publish with `url` and `file_path`, and no icon). If no Artifact tool is available, or the publish fails, skip it and add "page: not published from cloud (the local conductor republishes it)" to `integrity`. Never retry more than once.
-G4a. After the thread and page are done, send ONE ping carrying the whole briefing, so the briefing channel shows unread and Alan's phone gets a push: build `$W/ping.txt` as a first line `@alan.wright`, then the contents of every `$W/dm/*.txt` in order (parent, then replies), separated by blank lines, then `rcping "$(cat $W/ping.txt)"`. It must contain `@alan.wright` and the full briefing, not just the page link. Expect `ok`; on ERROR, retry once, then note it in `integrity`. Skip the ping when needs + read = 0 and nothing triggered.
 G4. If a PushNotification tool is available, send one push: "RC Briefing: <n> need you, <n> worth reading" plus the page URL. Skip it when needs + read = 0 and nothing triggered.
 
 === PART H: SAVE AND PUSH ===
