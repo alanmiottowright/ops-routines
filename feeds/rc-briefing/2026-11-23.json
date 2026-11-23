@@ -21,7 +21,7 @@
       "who": "Nazareno Bucciarelli",
       "summary": "Found a second way to freeze instances: authenticated users can send an unbounded avatar property that triggers a polynomial regexp (CORE-3096); fix in a separate PR. kaleman also flagged pwn.ai upload2shell, unsure if we're affected.",
       "why": "Security exposure; availability risk to customer instances.",
-      "link": "https://open.rocket.chat/group/rocketchat-security?msg=YseCbu97ir3PbBEm3",
+      "link": "https://open.rocket.chat/channel/rocketchat-security?msg=YseCbu97ir3PbBEm3",
       "important": false
     }
   ],
