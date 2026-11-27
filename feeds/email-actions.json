@@ -1,11 +1,13 @@
 [
- {"kind":"my-action","thread_id":"1a2077978405eb25","subject":"Provide details of Rocket Chat user (TR NO. 48/26)","who":"ATS Cyber Unit via legal@ / Linode","ask":"Data-disclosure request routed to legal@ 23 Nov; confirm legal owns it","status":"due in 2 days","elapsed_bd":3},
- {"kind":"my-action","thread_id":"19e74bdb2f07ce8d","subject":"Virginia Sales Tax - Baker Tilly (pinned, owned by Guilherme)","who":"Baker Tilly / Guilherme Barbosa","ask":"Status only; Guilherme owns it","status":"status only","elapsed_bd":0},
- {"kind":"waiting","thread_id":"1a1b1f0a52edf2f5","subject":"Address Confirmation","who":"CSC Global","ask":"Address confirmation sent 6 Nov; awaiting CSC reply","status":"overdue","elapsed_bd":14},
- {"kind":"waiting","thread_id":"1a1eb0b4ef44368d","subject":"Drata renewal","who":"Mayara Santos (internal)","ask":"Declined renewal as structured; awaiting revised proposal","status":"overdue","elapsed_bd":7},
- {"kind":"stale","thread_id":"1a19dc256ccd3130","subject":"Endeavor Q3 reporting","who":"Sam Foster (Endeavor)","ask":"Sam's 5 Nov reply needed my response; retired at 15 bd, decide: reply or drop","status":"overdue","elapsed_bd":15},
+ {"kind":"my-action","thread_id":"1a2077978405eb25","subject":"Provide details of Rocket Chat user (TR NO. 48/26)","who":"ATS Cyber Unit via legal@ / Linode","ask":"Data-disclosure request routed to legal@ 23 Nov; confirm legal owns it","status":"due in 1 days","elapsed_bd":4,"due":"2026-11-30"},
+ {"kind":"my-action","thread_id":"19e74bdb2f07ce8d","subject":"Virginia Sales Tax - Baker Tilly (pinned, owned by Guilherme)","who":"Baker Tilly / Guilherme Barbosa","ask":"Status only; last message in thread 6 Nov (mine); no activity for 14 bd","status":"status only","elapsed_bd":14},
+ {"kind":"waiting","thread_id":"1a20f6f29ccf34d3","subject":"Outstanding Balance INV4618 and INV4619","who":"Paragon Micro (AP)","ask":"Collections follow-up sent 24 Nov from cfo@; awaiting payment/reply","status":"due in 6 days","elapsed_bd":2,"due":"2026-12-08"},
+ {"kind":"waiting","thread_id":"1a1eb0b4ef44368d","subject":"Drata renewal","who":"Mayara Santos (internal)","ask":"Declined renewal as structured; awaiting revised proposal","status":"overdue","elapsed_bd":8,"due":"2026-11-20"},
+ {"kind":"stale","thread_id":"1a1b1f0a52edf2f5","subject":"Address Confirmation","who":"CSC Global","ask":"Sent 6 Nov, no CSC reply in 15 bd; call CSC or drop","status":"overdue","elapsed_bd":15},
  {"kind":"elsewhere","subject":"Brex: payment to approve","who":"Brex","ask":"Approve pending payment in Brex","status":"pending","elapsed_bd":0,"system":"Brex"},
  {"kind":"elsewhere","subject":"Insperity nondiscrimination testing questionnaire","who":"Insperity","ask":"Submit questionnaire","status":"pending","elapsed_bd":0,"system":"Insperity"},
- {"kind":"elsewhere","subject":"Zoho CRM: Wegmann mention; Calcagni/Engel approvals","who":"Zoho CRM","ask":"Review mention; approve/reject deals","status":"pending","elapsed_bd":0,"system":"Zoho CRM"},
- {"kind":"elsewhere","subject":"Maryland FAMLI registration for Insperity PEO","who":"Insperity / MD FAMLI","ask":"Register with FAMLI (Mayra forwarded 24 Nov)","status":"pending","elapsed_bd":0,"system":"MD FAMLI portal"}
+ {"kind":"elsewhere","subject":"Zoho CRM: Wegmann mention; Calcagni/Engel approvals; closed-won deal changed","who":"Zoho CRM","ask":"Review mention; approve/reject deals","status":"pending","elapsed_bd":0,"system":"Zoho CRM"},
+ {"kind":"elsewhere","subject":"Maryland FAMLI registration for Insperity PEO","who":"Insperity / MD FAMLI","ask":"Register with FAMLI (Mayra forwarded 24 Nov)","status":"pending","elapsed_bd":0,"system":"MD FAMLI portal"},
+ {"kind":"elsewhere","subject":"Pexip Order Form Wegman; IMA Renewal 360D Order Form signature requests","who":"Zoho Sign","ask":"Sign order forms","status":"pending","elapsed_bd":0,"system":"Zoho Sign"},
+ {"kind":"elsewhere","subject":"Valor Capital quarterly data request (Sep 2026) reminder","who":"Ipreo / IHS Markit","ask":"Submit quarterly data","status":"pending","elapsed_bd":0,"system":"Ipreo"}
 ]
